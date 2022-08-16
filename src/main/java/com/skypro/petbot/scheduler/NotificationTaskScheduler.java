@@ -2,7 +2,6 @@ package com.skypro.petbot.scheduler;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.skypro.petbot.listener.PetBotUpdatesListener;
-import com.skypro.petbot.repository.NotificationTaskRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
