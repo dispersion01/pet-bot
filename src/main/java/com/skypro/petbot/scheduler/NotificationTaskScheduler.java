@@ -11,12 +11,10 @@ import org.springframework.stereotype.Service;
 public class NotificationTaskScheduler {
     private Logger logger = LoggerFactory.getLogger(PetBotUpdatesListener.class);
 
-    private final NotificationTaskRepository repository;
     private final TelegramBot telegramBot;
 
     @Autowired
-    public NotificationTaskScheduler(NotificationTaskRepository repository, TelegramBot telegramBot) {
-        this.repository = repository;
+    public NotificationTaskScheduler(TelegramBot telegramBot) {
         this.telegramBot = telegramBot;
     }
 
