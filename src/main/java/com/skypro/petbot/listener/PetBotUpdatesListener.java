@@ -21,12 +21,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
     private static final String HELLO_TEXT = "Привет! Этот телеграм-бот создан, чтобы помочь Вам обрести друга";
 
     private final TelegramBot telegramBot;
-    private final NotificationTaskRepository notificationTaskRepository;
 
     @Autowired
-    public PetBotUpdatesListener(TelegramBot telegramBot, NotificationTaskRepository notificationTaskRepository) {
+    public PetBotUpdatesListener(TelegramBot telegramBot) {
         this.telegramBot = telegramBot;
-        this.notificationTaskRepository = notificationTaskRepository;
     }
 
     @PostConstruct
@@ -58,7 +56,6 @@ public class PetBotUpdatesListener implements UpdatesListener {
 
         });
         return UpdatesListener.CONFIRMED_UPDATES_ALL;
-
     }
 
     /**

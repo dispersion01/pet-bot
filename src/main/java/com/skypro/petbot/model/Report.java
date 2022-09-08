@@ -12,22 +12,18 @@ public class Report {
     private byte[] photo;
 
     private String message;
+
     @ManyToOne
     @JoinColumn(name = "report")
     private Owner ownerId;
-
-
-
 
     public Report(Long id, byte[] photo, String message, String ownerId) {
         this.id = id;
         this.photo = photo;
         this.message = message;
-
     }
 
     public Report() {
-
     }
 
     public Long getId() {
@@ -67,5 +63,15 @@ public class Report {
         int result = Objects.hash(id, message);
         result = 31 * result + Arrays.hashCode(photo);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "id=" + id +
+                ", photo=" + Arrays.toString(photo) +
+                ", message='" + message + '\'' +
+                ", ownerId=" + ownerId +
+                '}';
     }
 }

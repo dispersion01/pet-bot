@@ -11,17 +11,27 @@ public class Owner {
     private Long chatId;
 
     private String name;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1-L-Anna
     @OneToMany(mappedBy = "ownerId")
     private Set<Report> report;
 
     public Owner(Long chatId, String name, Report report) {
         this.chatId = chatId;
         this.name = name;
+<<<<<<< HEAD
 
     }
 
     public Owner() {
 
+=======
+    }
+
+    public Owner() {
+>>>>>>> 1-L-Anna
     }
 
     public Long getChatId() {
@@ -52,4 +62,16 @@ public class Owner {
     public int hashCode() {
         return Objects.hash(chatId, name);
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "chatId=" + chatId +
+                ", name='" + name + '\'' +
+                ", report=" + report +
+                '}';
+    }
+>>>>>>> 1-L-Anna
 }

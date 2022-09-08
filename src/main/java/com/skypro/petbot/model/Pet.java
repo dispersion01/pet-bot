@@ -1,9 +1,6 @@
 package com.skypro.petbot.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -15,17 +12,19 @@ public class Pet {
 
     private String name;
     private Long age;
-    private LocalDateTime dateOdoption;
+    private LocalDateTime dateAdoption;
 
-    public Pet(Long id, String name, Long age, LocalDateTime dateOdoption) {
+    @OneToOne
+    private Owner owner;
+
+    public Pet(Long id, String name, Long age, LocalDateTime dateAdoption) {
         this.id = id;
         this.name = name;
         this.age = age;
-        this.dateOdoption = dateOdoption;
+        this.dateAdoption = dateAdoption;
     }
 
     public Pet() {
-
     }
 
     public Long getId() {
@@ -53,11 +52,11 @@ public class Pet {
     }
 
     public LocalDateTime getDateOdoption() {
-        return dateOdoption;
+        return dateAdoption;
     }
 
     public void setDateOdoption(LocalDateTime dateOdoption) {
-        this.dateOdoption = dateOdoption;
+        this.dateAdoption = dateOdoption;
     }
 
     @Override
@@ -65,11 +64,21 @@ public class Pet {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Pet pet = (Pet) o;
-        return Objects.equals(id, pet.id) && Objects.equals(name, pet.name) && Objects.equals(age, pet.age) && Objects.equals(dateOdoption, pet.dateOdoption);
+        return Objects.equals(id, pet.id) && Objects.equals(name, pet.name) && Objects.equals(age, pet.age) && Objects.equals(dateAdoption, pet.dateAdoption);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, age, dateOdoption);
+        return Objects.hash(id, name, age, dateAdoption);
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", dateOdoption=" + dateAdoption +
+                '}';
     }
 }
