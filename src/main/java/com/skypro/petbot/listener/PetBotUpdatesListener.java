@@ -20,6 +20,11 @@ public class PetBotUpdatesListener implements UpdatesListener {
     private static final String START_COMMAND = "/start";
     private static final String HELLO_TEXT = "Привет! Этот телеграм-бот создан, чтобы помочь Вам обрести друга";
 
+    private static final String HISTORY_SHELTER = "/about";
+
+    private static final String HISTORY_ABOUT = "В нашем приюте потерявшиеся, выкинутые и брошенные собаки получают шанс и надежду обрести любящую семью и новый дом.";
+
+
     private final TelegramBot telegramBot;
 
     @Autowired
