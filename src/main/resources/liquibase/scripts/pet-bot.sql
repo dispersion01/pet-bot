@@ -14,6 +14,9 @@ CREATE TABLE IF NOT EXISTS pet
     age               INTEGER   NOT NULL,
     date_adoption     timestamp NOT NULL
     );
+
+
+
 create table if not exists report
 (
     id      integer not null primary key,
