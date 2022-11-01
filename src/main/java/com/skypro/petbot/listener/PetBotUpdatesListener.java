@@ -38,10 +38,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
             logger.info("Processing update: {}", update);
 
             // Текст сообщения из чата
-            String text = update.message().text();
+            //String text = update.message().text();
 
             //ID чата
-            Long chatId = update.message().chat().id();
+            //Long chatId = update.message().chat().id();
 
             /**
              * Получаем стартовый текст сообщения из чата и отправляем ответ.
@@ -67,4 +67,7 @@ public class PetBotUpdatesListener implements UpdatesListener {
         SendMessage sendMessage = new SendMessage(chatId, message);
         telegramBot.execute(sendMessage);
     }
+
+
+
 }
