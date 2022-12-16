@@ -3,7 +3,7 @@
 -- changeset annaLihanova:1
 CREATE TABLE IF NOT EXISTS owner
 (
-    id                INTEGER   NOT NULL PRIMARY KEY,
+    chat_id                INTEGER   NOT NULL PRIMARY KEY,
     name              VARCHAR   NOT NULL
     );
 

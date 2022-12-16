@@ -20,6 +20,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
     private static final String START_COMMAND = "/start";
     private static final String HELLO_TEXT = "Привет! Этот телеграм-бот создан, чтобы помочь Вам обрести друга";
 
+    private static final String HISTORY_SHELTER = "/about";
+
+    private static final String HISTORY_ABOUT = "В нашем приюте потерявшиеся, выкинутые и брошенные собаки получают шанс и надежду обрести любящую семью и новый дом.";
+
     private final TelegramBot telegramBot;
 
     @Autowired
@@ -38,10 +42,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
             logger.info("Processing update: {}", update);
 
             // Текст сообщения из чата
-            //String text = update.message().text();
+            String text = update.message().text();
 
             //ID чата
-            //Long chatId = update.message().chat().id();
+            Long chatId = update.message().chat().id();
 
             /**
              * Получаем стартовый текст сообщения из чата и отправляем ответ.
@@ -51,6 +55,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
             if (message.text().equals(START_COMMAND)) {
                 logger.info(START_COMMAND + "received");
                 sendMessage(message.chat().id(), HELLO_TEXT);
+                return;
+            } else if(message.text().equals(HISTORY_SHELTER)) {
+                logger.info(HISTORY_SHELTER + "received");
+                sendMessage(message.chat().id(), HISTORY_ABOUT);
                 return;
             }
 
