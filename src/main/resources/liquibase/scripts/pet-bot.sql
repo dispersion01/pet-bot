@@ -11,12 +11,12 @@ CREATE TABLE IF NOT EXISTS pet
 (
     id                bigint   NOT NULL PRIMARY KEY,
     name              VARCHAR   NOT NULL,
-    age               INTEGER   NOT NULL,
+    age               BIGINT   NOT NULL,
     date_adoption     timestamp NOT NULL
     );
 create table if not exists report
 (
-    id      integer not null primary key,
+    chat_id      integer not null primary key,
     photo   bytea   not null,
     message varchar not null
 );
