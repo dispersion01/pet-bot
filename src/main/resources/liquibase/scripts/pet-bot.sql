@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS owner
 CREATE TABLE IF NOT EXISTS pet
 (
     id                bigint   NOT NULL PRIMARY KEY,
+    owner_chat_id     bigint   NOT NULL,
     name              VARCHAR   NOT NULL,
     age               BIGINT   NOT NULL,
     date_adoption     timestamp NOT NULL
@@ -17,6 +18,7 @@ CREATE TABLE IF NOT EXISTS pet
 create table if not exists report
 (
     chat_id      integer not null primary key,
+    owner_id     bigint   NOT NULL,
     photo   bytea   not null,
     message varchar not null
 );
