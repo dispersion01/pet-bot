@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS pet
     );
 create table if not exists report
 (
-    chat_id      integer not null primary key,
+    id     bigint not null primary key,
     owner_id     bigint   NOT NULL,
     photo   bytea   not null,
     message varchar not null
