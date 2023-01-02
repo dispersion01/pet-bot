@@ -30,7 +30,7 @@ public class PetBotUpdatesListener implements UpdatesListener {
 
     private final TelegramBot telegramBot;
 
-    @Autowired
+
     public PetBotUpdatesListener(TelegramBot telegramBot) {
         this.telegramBot = telegramBot;
     }
@@ -59,15 +59,15 @@ public class PetBotUpdatesListener implements UpdatesListener {
             if (message.text().equals(START_COMMAND)) {
                 logger.info(START_COMMAND + "received");
                 sendMessage(message.chat().id(), HELLO_TEXT);
-                return;
+
             } else if (message.text().equals(HISTORY_SHELTER)) {
                 logger.info(HISTORY_SHELTER + "received");
                 sendMessage(message.chat().id(), HISTORY_ABOUT);
-                return;
+
             } else if (message.text().equals(GET_PET)){
                 logger.info(GET_PET + "received");
                 sendMessage((message.chat().id()), GET_PET_TEXT);
-                return;
+
             }
 
         });
