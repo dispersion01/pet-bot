@@ -24,6 +24,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
 
     private static final String HISTORY_ABOUT = "В нашем приюте потерявшиеся, выкинутые и брошенные собаки получают шанс и надежду обрести любящую семью и новый дом.";
 
+    private static  final String GET_PET = "/getPet";
+
+    private static final String GET_PET_TEXT = "Для того, чтобы приютить питомца необходимы следующие документы: паспорт, справка и подтверждение";
+
     private final TelegramBot telegramBot;
 
     @Autowired
@@ -56,9 +60,13 @@ public class PetBotUpdatesListener implements UpdatesListener {
                 logger.info(START_COMMAND + "received");
                 sendMessage(message.chat().id(), HELLO_TEXT);
                 return;
-            } else if(message.text().equals(HISTORY_SHELTER)) {
+            } else if (message.text().equals(HISTORY_SHELTER)) {
                 logger.info(HISTORY_SHELTER + "received");
                 sendMessage(message.chat().id(), HISTORY_ABOUT);
+                return;
+            } else if (message.text().equals(GET_PET)){
+                logger.info(GET_PET + "received");
+                sendMessage((message.chat().id()), GET_PET_TEXT);
                 return;
             }
 
