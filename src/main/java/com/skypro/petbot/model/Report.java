@@ -14,7 +14,7 @@ public class Report {
     private String message;
 
     @ManyToOne
-    @JoinColumn(name = "report")
+    @JoinColumn(name = "owner_id")
     private Owner ownerId;
 
     public Report(Long id, byte[] photo, String message, String ownerId) {
