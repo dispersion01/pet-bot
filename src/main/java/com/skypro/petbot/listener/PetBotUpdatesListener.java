@@ -47,10 +47,10 @@ public class PetBotUpdatesListener implements UpdatesListener {
 
             // Текст сообщения из чата
             String text = update.message().text();
-            if(text != null){
+            if(text== null){
                 return ;
             }
-            
+
             //ID чата
             Long chatId = update.message().chat().id();
 
